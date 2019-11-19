@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <curses.h>
 
 int	main(int ac, char **av)
 {
@@ -15,17 +16,17 @@ int	main(int ac, char **av)
 	int	joueur;
 	int	i;
 
-	nombreMystere = 41; // Le nombre que tu doit trouver
-	nombreEntier = 0; // Le nombre que tu entre
+	nombreMystere = 0;
+	nombreEntier = 0;
 	MIN = 1;
-	coups = 0; // Nombre de coups quand tu auras fini la partis
+	coups = 0;
 	continuerPartie = 1;
 	choixNiveau = 0;
 	choixMenu = 0;
 	joueur = 0;
 	i = 0;	
 	printf("\n\n=-=-=-\033[30;01mBIENVEUE DANS LE JEUX DU PLUS OU MOINS\33[00m=-=-=-\n\n");
-	printf ("\033[32;01mBonjour\033[00m\n");
+
 	printf("\n=-=-=-=-\033[30;01mTAPER UN DES CHIFFRES CORRESPONDANTS A LA DIFFICULTER\33[00m=-=-=-=-\n");
 
 	printf("\n\n=-=-=-\033[30;01mNIVEAU DE DIFFICULTE\033[00m=-=-=-\n\n");
@@ -64,7 +65,7 @@ int	main(int ac, char **av)
 	{
 		while(choixMenu < 1 || choixMenu > 2)
 		{
-			printf("Recommence et arrête t'es bêtise !\n");
+			printf("Recommence et arrete tes betises jeune Padawan !\n");
 			scanf("%d", &choixMenu);
 		}	
 		if (choixMenu == 1)
@@ -76,7 +77,7 @@ int	main(int ac, char **av)
 		{
 			printf("Joueur 1 : Rentre le premier nombre\n");
 			scanf("%d", &nombreMystere);
-			printf("\n\n\n\n\n\n\n\n\n");
+			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 			printf("Joueur 2, ");
 		}		
 			
@@ -86,9 +87,9 @@ int	main(int ac, char **av)
 			scanf("%d", &nombreEntier);
 			coups++;
 			if (nombreMystere > nombreEntier)
-				printf("C'est plus !\n\n");
+				printf("\033[32mC'est plus !\033[00m\n\n");
 			else if (nombreMystere < nombreEntier)
-				printf("C'est moins !\n\n");
+				printf("\033[31mC'est moins !\033[00m\n\n");
 			else
 				printf ("\033[01;36mBravo, vous avez trouve le nombre mystere en %d coups !!!\033[00m\n\n", coups);
 		}
